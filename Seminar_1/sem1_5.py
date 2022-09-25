@@ -2,8 +2,13 @@
 import random
 # Очистка консоли
 import os
+
+
 def clear(): return os.system('cls')
+
+
 clear()
+
 
 # 5. Дано число. Проверить кратно ли оно 5 и 10 или 15, но не 30
 def multiplicity():
@@ -12,5 +17,6 @@ def multiplicity():
         print(f'Число {n} кратно 5 (10, 15) и не кратно 30')
     else:
         print(f'Число {n} НЕ кратно 5 (10, 15) ИЛИ кратно 30')
+
 
 multiplicity()

@@ -3,12 +3,16 @@ import random
 from math import sqrt
 # Очистка консоли
 import os
+
+
 def clear(): return os.system('cls')
+
+
 clear()
+
 
 # 10. Найти расстояние между двумя точками пространства
 # 5. Домашнее задание
-
 # Вычисдение расстояния между двумя точами в 2D пространстве. На входе два списка с координатами X и Y
 def find_distance(a_list, b_list):
     # первый вариант. через библиотеку math (нагляднее)
@@ -16,6 +20,7 @@ def find_distance(a_list, b_list):
     # второй варинат. через возведение в степень 0.5 (быстрее и не надо подключать библиотеку math)
     # distance = round(((a_list[0] - b_list[0]) ** 2 + (a_list[1] - b_list[1]) ** 2) ** 0.5, 2)
     return distance
+
 
 # Ввод координат. На входе литера точки, на выходе список с координатами X и Y
 def input_coord(letter):
@@ -35,4 +40,3 @@ def input_coord(letter):
 a_list = input_coord("A")
 b_list = input_coord("B")
 print(f"Растояние между точками = {find_distance(a_list, b_list)}")
-

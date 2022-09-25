@@ -2,13 +2,17 @@
 import random
 # Очистка консоли
 import os
+
+
 def clear(): return os.system('cls')
+
+
 clear()
 
-# 8. Сообщить в какой четверти координатной плоскости или на какой оси находится точка с координатами Х и У.
-# 9. Домашнее задание
 
-def quater(x, y):
+# 8. Сообщить в какой четверти координатной плоскости или на какой оси находится точка с координатами Х и У.
+# 3. Домашнее задание
+def quarter(x, y):
     text = None
     if x > 0 and y > 0:
         text = "Первая четверть"
@@ -26,7 +30,7 @@ def quater(x, y):
         text = "Ось Y"
     return text
 
+
 x = int(input("Введите x "))
 y = int(input("Введите y "))
-print(quater(x, y))
-
+print(quarter(x, y))
