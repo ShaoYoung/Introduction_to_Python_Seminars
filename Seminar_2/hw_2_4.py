@@ -15,10 +15,10 @@ clear()
 # Позиции хранятся в списке positions - создайте этот список (например: positions = [1, 3, 6]).
 # Создание списка от -n до n
 def get_list(n):
-    list = []
+    list_interval = []
     for i in range(-n, n + 1):
-        list.append(i)
-    return (list)
+        list_interval.append(i)
+    return (list_interval)
 
 
 # Запись позиций списка в отдельный список. на входе длина имеющегося списка.
@@ -49,7 +49,7 @@ def multi_position(list, position_list):
 
 
 n = int(input("Введите число N: "))
-list = get_list(n)
-print(f"Список от {-n} до {n} {list}")
-position_list = write_list_positions(len(list))
-print(f"Произведение элементов списка на указанных позициях равно {multi_position(list, position_list)}")
+list_interval = get_list(n)
+print(f"Список от {-n} до {n} {list_interval}")
+position_list = write_list_positions(len(list_interval))
+print(f"Произведение элементов списка на указанных позициях равно {multi_position(list_interval, position_list)}")

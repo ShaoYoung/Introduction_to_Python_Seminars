@@ -15,10 +15,10 @@ clear()
 
 # Создание списка от -n до n
 def get_list(n):
-    list = []
+    list_interval = []
     for i in range(-n, n + 1):
-        list.append(i)
-    return (list)
+        list_interval.append(i)
+    return (list_interval)
 
 
 # Запись позиций списка в файл
@@ -40,30 +40,33 @@ def write_file(file_name, len_list):
     f = open(file_name, 'w')
     for i in position_list:
         f.write(i + '\n')
+    f.close()
     # return
 
 
 # Чтение позиций списка из файла
 def read_file(file_name):
     position_list = []
-    f = open(file_name, 'r')
-    for line in f:
-        position_list.append(int(line))
+    # f = open(file_name, 'r')
+    # альтернативный вариант. в этом случае файл закрывается автоматически
+    with open(file_name, 'r') as f:
+        for line in f:
+            position_list.append(int(line))
     return position_list
 
 
 # Умножение элементов. На входе два списка. Первый с элементами, второй с номерами позиций
-def multi_position(list, position_list):
+def multi_position(list_interval, position_list):
     multi = 1
     for i in position_list:
-        multi *= list[i]
+        multi *= list_interval[i]
     return multi
 
 
 file_name = 'file.txt'
 n = int(input("Введите число N "))
-list = get_list(n)
-print(f"Список от {-n} до {n} {list}")
-write_file(file_name, len(list))
+list_interval = get_list(n)
+print(f"Список от {-n} до {n} {list_interval}")
+write_file(file_name, len(list_interval))
 position_list = read_file(file_name)
-print(f"Произведение элементов списка на указанных позициях равно {multi_position(list, position_list)}")
+print(f"Произведение элементов списка на указанных позициях равно {multi_position(list_interval, position_list)}")

@@ -17,22 +17,22 @@ clear()
 
 # Задание списка из n чисел последовательности
 def get_list(n):
-    list = []
+    list_chain = []
     # mystr = list() - альтернативный вариант задания списка
     for i in range(1, n + 1):
-        list.append(round((1 + 1 / i) ** i, 2))
-    return list
+        list_chain.append(round((1 + 1 / i) ** i, 2))
+    return list_chain
 
 
 # Вычисление суммы элементов списка
-def sum_list(list):
+def sum_list(list_chain):
     result = 0
-    for i in list:
+    for i in list_chain:
         result += i
     return result
 
 
 n = int(input("Введите число n "))
-list = get_list(n)
-print(f"Список {list}")
-print(f"Сумма элементов списка {sum_list(list)}")
+list_chain = get_list(n)
+print(f"Список {list_chain}")
+print(f"Сумма элементов списка {sum_list(list_chain)}")
