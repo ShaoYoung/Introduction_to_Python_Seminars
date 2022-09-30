@@ -2,6 +2,7 @@
 # Очистка консоли
 import os
 import time
+import math
 
 
 def clear():
@@ -29,7 +30,7 @@ def random_in_time(a, b):
         x = time.time_ns()  # время в наносекундах
         x = int(x // 100)  # убираем два лишних нуля
         x = x % b  # максимальное random-число
-        time.sleep(0.001)   #задержка для получения другого совсем произвольного time.time_ns
+        time.sleep(0.001)  # задержка для получения другого совсем произвольного time.time_ns
         y = time.time_ns()
         y = int(y // 100)  # убираем два лишних нуля
         if a > 0:
@@ -42,6 +43,16 @@ def random_in_time(a, b):
     print(f'Случайное число в диапазоне от [{a} до {b}) -> {random_number}')
 
 
-a = 100   #начало random-диапазона [a
-b = 200   #конец random-диапазона b)
-random_in_time(a, b)
+# функция получения псевдослучайного числа без использования random (через пропорцию)
+def random_proportion(a, b):
+    x = time.time_ns()  # время в наносекундах
+    x = int(x // 100)  # убираем два лишних нуля
+    x = x % b
+    random_number = int(a + (b - a) * x / b)
+    print(f'Случайное число в диапазоне от [{a} до {b}) -> {random_number}')
+
+
+a = 1999990  # начало random-диапазона [a
+b = 2000000  # конец random-диапазона b)
+# random_in_time(a, b)
+random_proportion(a, b)
