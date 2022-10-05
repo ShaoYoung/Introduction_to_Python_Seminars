@@ -50,6 +50,10 @@ def random_proportion(a, b):
     x = x % b
     random_number = int(a + (b - a) * x / b)
     print(f'Случайное число в диапазоне от [{a} до {b}) -> {random_number}')
+    # еще один вариант (предложил Марат)
+    len_x = len(str(x))
+    random_number = int(a + (b - a) * x / 10 ** len_x)
+    print(f'Случайное число в диапазоне от [{a} до {b}) -> {random_number}')
 
 
 a = 1999990  # начало random-диапазона [a
