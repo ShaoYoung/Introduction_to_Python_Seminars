@@ -38,7 +38,7 @@ def check_winner(matrix):
     var_win.append(matrix[0][2] == matrix[1][2] == matrix[2][2] != ' ')
     var_win.append(matrix[0][0] == matrix[1][1] == matrix[2][2] != ' ')
     var_win.append(matrix[0][2] == matrix[1][1] == matrix[2][0] != ' ')
-    print(var_win)
+    # print(var_win)
     if var_win.count(True) > 0:
         return True
     return False
