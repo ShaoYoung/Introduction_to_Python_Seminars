@@ -37,7 +37,8 @@ def check_winner(matrix):
     var_win.append(matrix[0][1] == matrix[1][1] == matrix[2][1] != ' ')
     var_win.append(matrix[0][2] == matrix[1][2] == matrix[2][2] != ' ')
     var_win.append(matrix[0][0] == matrix[1][1] == matrix[2][2] != ' ')
-    var_win.append(matrix[0][2] == matrix[1][1] == matrix[0][2] != ' ')
+    var_win.append(matrix[0][2] == matrix[1][1] == matrix[2][0] != ' ')
+    print(var_win)
     if var_win.count(True) > 0:
         return True
     return False
@@ -57,7 +58,7 @@ attempt_number = 0
 # стартовое игровое поле
 matrix = [[' ', ' ', ' '], [' ', ' ', ' '], [' ', ' ', ' ']]
 
-while not check_winner(matrix) or attempt_number != 9:
+while not check_winner(matrix) and attempt_number < 9:
     print_playing_field(matrix)
     print(f'Очередь игрока \033[1m\033[31m{players[attempt]}\033[0m.')
     if attempt:
