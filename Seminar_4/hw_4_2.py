@@ -28,17 +28,40 @@ def simple_multipliers(n):
         return
     simple_numbers = []
     # поочередно целочисленно делим число на 2...n
+    # while n > 1:
     for i in range(2, n + 1):
         # если делится нацело, то проверяем делитель на простое число
         if n % i == 0:
             # если делитель - простое число, добавляем его в список
             if check_simple(i):
                 simple_numbers.append(i)
+                # n //= i
+                # break
     return simple_numbers
+
+# Разложение числа на простые множители
+def split_simple_multipliers(n):
+    if n < 2:
+        return
+    simple_numbers = []
+    # поочередно целочисленно делим число на 2...n
+    while n > 1:
+        for i in range(2, n + 1):
+            # если делится нацело, то проверяем делитель на простое число
+            if n % i == 0:
+                # если делитель - простое число, добавляем его в список
+                if check_simple(i):
+                    simple_numbers.append(i)
+                    n //= i
+                    break
+    return simple_numbers
+
+
 
 
 n = abs(int(input("Введите натуральное число: ")))
 print(f"Список простых множителей числа {n}: {simple_multipliers(n)}")
+print(f"Разложение на простые множители числа {n}: {split_simple_multipliers(n)}")
 
 # n = int(input("Введите натуральное число: "))
 # проверка на принадлежность экземпляра object классу classinfo. Возвращает bool
