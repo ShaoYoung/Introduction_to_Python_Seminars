@@ -46,3 +46,7 @@ def sum_of_numbers_var_2(n):
 n = input("Введите вещественное число ")
 print(f"Сумма цифр числа {n} равна {sum_of_numbers(n)}")
 print(f"Сумма цифр числа {n} равна {sum_of_numbers_var_2(n)}")
+
+sum_numbers = sum(map(int, (filter(lambda x: x.isdigit(), n))))
+# sum_numbers = sum(map(int, sum_numbers))
+print(f'Сумма цифр числа {n} равна {sum_numbers} (третий вариант через filter и map)')

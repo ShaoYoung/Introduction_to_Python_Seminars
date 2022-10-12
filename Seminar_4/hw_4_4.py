@@ -28,6 +28,14 @@ def get_polinom_dict(k):
     return polynom_dict
 
 
+# Random-создание многочлена - словаря. Ключи - степени, значения - коэффициенты. На входе степень многочлена.
+# Заполнение через Dict comprehension
+def get_polinom_dict_2(k):
+    # заполняем словарь. Ключ - степень.
+    polynom_dict = {i: random.randint(0, 101) for i in range(k, -1, -1)}
+    return polynom_dict
+
+
 # Запись многочлена-словаря в файл. На входе словарь и имя файла.
 def write_polynom_to_file(polynom_dict, file_name):
     text_string = ''
@@ -68,6 +76,10 @@ def write_polynom_to_file(polynom_dict, file_name):
 k = abs(int(input("Введите натуральную степень k: ")))
 polynom_dict = get_polinom_dict(k)
 print(f'Словарь-полином: {polynom_dict}')
+
+polynom_dict = get_polinom_dict_2(k)
+print(f'Словарь-полином (через Dict comprehension): {polynom_dict}')
+
 file_name = 'file.txt'
 write_polynom_to_file(polynom_dict, file_name)
 

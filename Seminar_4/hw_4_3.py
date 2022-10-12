@@ -29,13 +29,20 @@ def non_repeat(list_number):
     for elem in list_number:
         if list_number.count(elem) == 1:
             non_repeat_list.append(elem)
-    print(f'Список неповторяющихся элементов исходной последовательности {non_repeat_list}')
+    print(f'Список неповторяющихся элементов исходной последовательности (через цикл) {non_repeat_list}')
+
+# Поиск неповторяющихся элементов исходной последовательности
+def non_repeat_2(list_number):
+    non_repeat_list = list(filter((lambda x: list_number.count(x) == 1), list_number))
+    print(f'Список неповторяющихся элементов исходной последовательности (через filter) {non_repeat_list}')
+
 
 
 order = input('Введите последовательность чисел (в качестве символа-разделителя используйте пробел: ')
 list_number = order.split(' ')
 set_change(list_number)
 non_repeat(list_number)
+non_repeat_2(list_number)
 
 # Преобразуем список строк в список int
 # Функция map применяет функцию int к каждому элементу объекта list_number,

@@ -23,6 +23,12 @@ def get_list(n):
     return list_random
 
 
+# Задание списка из n случайных чисел. Через List comprehension
+def get_list_2(n):
+    list_random = [random.randint(0, 9) for i in range(1, n + 1)]
+    return list_random
+
+
 # Вычисление суммы элементов списка, стоящих на нечётной позиции
 def find_summ_odd(list_random):
     summ = 0
@@ -33,5 +39,8 @@ def find_summ_odd(list_random):
 
 n = 5  # длина списка
 list_random = get_list(n)
+list_random = get_list_2(n)
+
+
 print(list_random)
 print(f'Сумма элементов списка, стоящих на нечётных позициях = {find_summ_odd(list_random)}')
