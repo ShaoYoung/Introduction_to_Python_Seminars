@@ -67,7 +67,7 @@ def save_html(phone_book):
     file_name = 'phone_book.html'
     # Создание html-файла (строка с полученными данными)
     style = 'style="font-size:30px"'
-    book_html = '<html>\n <head></head>\n <body>\n'
+    book_html = '<html>\n <head><meta charset="UTF-8"></head>\n <body>\n'
     book_html += f'<p {style}><span style="color:blue">Телефонный справочник</span></p>\n'
     book_html += f'<table border="2" bordercolor="red" cellpadding="10" {style}>'
     count = 0
